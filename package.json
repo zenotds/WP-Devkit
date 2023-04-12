@@ -3,8 +3,8 @@
   "version": "2.0",
   "description": "Zeno stack for template assets compilation",
   "scripts": {
-    "eb": "node esbuild.js",
-    "ebw": "node esbuild_watch.js"
+    "build": "node esbuild.js",
+    "watch": "node esbuild_watch.js"
   },
   "type": "module",
   "author": "Francesco Selva",
