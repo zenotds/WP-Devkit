@@ -1,5 +1,6 @@
 import esbuild from "esbuild";
 import { sassPlugin } from "esbuild-sass-plugin";
+import inlineImage from "esbuild-plugin-inline-image";
 
 let app = await esbuild.context({
     logLevel: 'debug',
@@ -16,6 +17,9 @@ let app = await esbuild.context({
     minify: true,
     plugins: [
         sassPlugin(),
+        inlineImage({
+                limit: 0
+              }),
     ],
     legalComments: 'none',
 })
