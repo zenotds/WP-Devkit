@@ -1,4 +1,4 @@
-# zeno-starter
+# Zeno Starter DevKit
 Static JS + SCSS Environment for Bootstrap 5
 
 This is a simple frontend starter setup used in static template development such as Wordpress themes or other CMS related templating situations.
