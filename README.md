@@ -39,5 +39,7 @@ The point of this environment is watching and building scripts and styles levera
 ## Changelog
 
 v1.0 - First release, Only JS, Webpack bundler. Basic dependencies.
+
 v1.5 - JS and SCSS parsing with Webpack and PostCSS. More useful dependencies.
+
 v2.0 - New bundler: esbuild, faster and lighter!
