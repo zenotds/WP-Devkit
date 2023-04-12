@@ -7,6 +7,8 @@ The point of this environment is watching and building scripts and styles levera
 
 ## Basic Structure
 
+Structure the theme as you see fit. Just keep the structure for these 2 folders:
+
 - assets -> compiled files
   - js -> compiled scripts
   - scss -> compiled styles
@@ -14,7 +16,6 @@ The point of this environment is watching and building scripts and styles levera
 - dev -> source files
   - js -> source scripts
   - scss -> source styles
-
 
 
 ## Instructions
@@ -34,6 +35,7 @@ The point of this environment is watching and building scripts and styles levera
 
 - Avoid images in css, there are better ways :P
 - The starter comes with some useful JS packages such as Bootstrap, Swiper, Plyr, etc.
+- Feel free to edit whatever you want as you see fit.
 
 
 ## Changelog
