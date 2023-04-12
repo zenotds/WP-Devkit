@@ -22,9 +22,10 @@ async function build() {
                 limit: 0
               }),
         ],
+        legalComments: 'none',
     });
 }
 
 build()
-    .then(() => console.log('⚡ Styles & Scripts Compiled! ⚡ '))
+    .then(() => console.log('⚡ Styles & Scripts Compiled! ⚡'))
     .catch(() => process.exit(1));
