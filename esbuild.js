@@ -7,11 +7,11 @@ async function build() {
         logLevel: 'debug',
         entryPoints:
         {
-            'js/scripts.min': './js/scripts.js',
-            'css/styles.min': './sass/styles.scss',
-            'css/print.min': './sass/print.scss'
+            'js/scripts.min': './dev/js/scripts.js',
+            'css/styles.min': './dev/sass/styles.scss',
+            'css/print.min': './dev/sass/print.scss'
         },
-        outdir: '../assets',
+        outdir: './assets',
         bundle: true,
         sourcemap: true,
         external: ['*.woff', '*.woff2', '*.ttf', '*.eot?#iefix'],
