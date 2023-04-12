@@ -1,11 +1,12 @@
 # zeno-starter
-Static JS + SCSS Environment
+Static JS + SCSS Environment for Bootstrap 5
 
 This is a simple frontend starter setup used in static template development such as Wordpress themes or other CMS related templating situations.
 The point of this environment is watching and building scripts and styles leveraging a more modern approach with ES Modules and SASS.
 
 
-## Structure
+## Basic Structure
+
 - assets -> compiled files
   - js -> compiled scripts
   - scss -> compiled styles
@@ -22,13 +23,21 @@ The point of this environment is watching and building scripts and styles levera
 2. Run `npm run watch` to watch for changes and build assets
 3. Run `npm run build` to build assets
 
+
+## Build notes
+
+- Fonts (woff, woff2, ttf, eot) are ignored and not processed so keep dependant files relative to the /assets/ folder
+- Images are processed with inlineImage plugin. See documentation.
+
+
 ## Notes
 
-- Fonts (woff, woff2, ttf, eot) are ignored and not processed.
-- css url() paths are not parsed so keep dependant files relative to the /assets/ folder
+- Avoid images in css, there are better ways :P
+- The starter comes with some useful JS packages such as Bootstrap, Swiper, Plyr, etc.
+
 
 ## Changelog
 
 v1.0 - First release, Only JS, Webpack bundler. Basic dependencies.
 v1.5 - JS and SCSS parsing with Webpack and PostCSS. More useful dependencies.
-v2.0 - New bundler: esbuild, faster and lighter
+v2.0 - New bundler: esbuild, faster and lighter!
