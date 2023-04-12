@@ -35,12 +35,12 @@ Structure the theme as you see fit. Just keep the structure for these 2 folders:
 
 - Avoid images in css, there are better ways :P
 - The starter comes with some useful JS packages such as Bootstrap, Swiper, Plyr, etc.
+- I usually base my themes on Bootstrap and just compile the styles i need to.
 - Feel free to edit whatever you want as you see fit.
-
 
 ## Changelog
 
-v1.0 - First release, Only JS, Webpack bundler. Basic dependencies.
+v1.0 - First release, Only JS, Webpack bundler. Basic dependencies. Some custom scripts
 
 v1.5 - JS and SCSS parsing with Webpack and PostCSS. More useful dependencies.
 
