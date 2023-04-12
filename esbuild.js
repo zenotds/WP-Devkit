@@ -10,7 +10,7 @@ async function build() {
             'css/styles.min': './sass/styles.scss',
             'css/print.min': './sass/print.scss'
         },
-        outdir: 'assets',
+        outdir: './assets',
         bundle: true,
         sourcemap: true,
         external: ['*.woff', '*.woff2', '*.ttf', '*.eot?#iefix'],
