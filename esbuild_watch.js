@@ -9,7 +9,7 @@ let app = await esbuild.context({
         'css/styles.min': './dev/sass/styles.scss',
         'css/print.min': './dev/sass/print.scss'
     },
-    outdir: '../assets',
+    outdir: './assets',
     bundle: true,
     sourcemap: true,
     external: ['*.woff', '*.woff2', '*.ttf', '*.eot?#iefix'],
