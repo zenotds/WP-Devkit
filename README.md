@@ -1,4 +1,4 @@
-# Zeno Starter DevKit
+# Zeno's Starter DevKit
 JS + SCSS Build Pipeline for Wordpress themes with Timber
 
 This is a simple frontend starter setup used in static template development such as Wordpress themes or other CMS related templating situations.
@@ -11,7 +11,7 @@ Structure the theme as you see fit. Just keep the structure for these 2 folders:
 
 - assets -> compiled files
   - js -> compiled scripts
-  - scss -> compiled styles
+  - css -> compiled styles
 
 - dev -> source files
   - js -> source scripts
