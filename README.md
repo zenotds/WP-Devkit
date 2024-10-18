@@ -41,7 +41,7 @@ Structure the theme as you see fit. Just keep the structure for these 2 folders:
 ## Changelog
 
 v1.0 - First release, Only JS, Webpack bundler. Basic dependencies. Some custom scripts
-
 v1.5 - JS and SCSS parsing with Webpack and PostCSS. More useful dependencies.
-
 v2.0 - New bundler: esbuild, faster and lighter!
+v3.0 - Integrated with Tailwind (not mandatory)
+v3.5 - Better Tailwind integration (bootstrap no longer mandatory)
