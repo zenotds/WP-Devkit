@@ -1,6 +1,6 @@
 {
 	"name": "Zeno Starter",
-	"version": "3.0rc1",
+	"version": "3.0",
 	"description": "Zeno stack for assets compilation",
 	"scripts": {
 		"build": "NODE_ENV=production node esbuild.js",

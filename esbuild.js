@@ -125,7 +125,7 @@ if (!isProduction) {
         console.log('\n✅ Initial build complete. Now watching for changes...');
 
         bs.init({
-            proxy: 'https://site.io',
+            proxy: 'https://getmuffin.io',
             open: true,
             browser: ["firefox developer edition"]
         });
