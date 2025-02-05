@@ -1,10 +1,7 @@
-// Variables
-// Font Awesome
-$fa-font-path: "../fonts/fontawesome" !default;
-
+// Variables 
 // Options
 $enable-caret: true !default;
-$enable-rounded: true !default;
+$enable-rounded: false !default;
 $enable-shadows: false !default;
 $enable-gradients: false !default;
 $enable-transitions: true !default;
@@ -31,21 +28,8 @@ $grid-breakpoints: (
 	xl: 1200px,
 	2xl: 1400px,
 	3xl: 1600px,
+	4xl: 1800px,
 ) !default;
-
-// Grid containers
-$container-max-widths: (
-	xs: 100%,
-	sm: 100%,
-	md: 100%,
-	lg: 100%,
-	xl: 1140px,
-	2xl: 1340px,
-	3xl: 1540px,
-) !default;
-
-// Grid options
-// $grid-gutter-width: 2rem !default;
 
 // Typography
 $headings-font-weight: bold !default;
@@ -62,11 +46,20 @@ $btn-focus-box-shadow: 0 !default;
 // Modals and offcanvas
 $modal-backdrop-opacity: 0.85 !default;
 
-// Mixins
-@mixin generate-css-variables($colors-map) {
-	:root {
-		@each $name, $value in $colors-map {
-			--#{$name}: #{$value};
-		}
-	}
-}
+
+// BS5 Functions
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// BS5 Variables
+@import "../../../node_modules/bootstrap/scss/variables";
+
+// BS5 Tools
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// BS5 Layout and components
+@import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/transitions";
+@import "../../../node_modules/bootstrap/scss/modal";
+@import "../../../node_modules/bootstrap/scss/offcanvas";
+@import "../../../node_modules/bootstrap/scss/tables";
