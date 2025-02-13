@@ -1,6 +1,6 @@
 {
 	"name": "@bizen/wp_devkit",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "WP Theme Devkit",
 	"scripts": {
 		"build": "NODE_ENV=production node esbuild.js",

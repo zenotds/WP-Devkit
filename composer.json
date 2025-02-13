@@ -1,6 +1,6 @@
 {
 	"name": "bizen/wp_composer",
-	"version": "4.0.1",
+	"version": "4.0.2",
 	"description": "Composer for WP Devkit",
 	"type": "wordpress-theme",
 	"license": "MIT",

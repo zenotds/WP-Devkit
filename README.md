@@ -79,7 +79,7 @@ v4.0 - Refactored for Tailwind 4
 - Styles compile with PostCSS with the new @tailwind/postcss and autoprefixer plugin
 - Added composer directives for Timber 2.0+ and request object
 
-v4.0.1 - Minor fixes
+v4.0.2 - Minor fixes
 - Updated NPM dependencies
 - Updated Composer dependencies
 - Aligned bs5 breakpoints to Tailwind ones
