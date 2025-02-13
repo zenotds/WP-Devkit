@@ -1,13 +1,14 @@
 # Zeno's WP DevKit
-JS + SCSS Build Pipeline for Wordpress themes with Timber 2.0
+JS + CSS Build Pipeline for Wordpress themes
 
-This is a simple frontend starter setup used in static template development such as Wordpress themes or other CMS related templating situations.
-The point of this environment is watching and building scripts and styles leveraging a more modern approach with ES Modules and SASS.
+This is a frontend setup used in static template development such as Wordpress themes or other CMS related templating situations. I use it with Timber 2.0 but you can use the tools you prefer.
+
+The point of this environment is watching and building scripts and styles with a modern approach with ES Modules and PostCSS.
 
 
 ## Basic Structure
 
-Structure the theme as you see fit. Just keep the structure for these 2 folders:
+Structure the theme as you see fit but keep the structure for these 2 folders:
 
 - assets -> compiled files
   - js -> compiled scripts
@@ -21,14 +22,24 @@ Structure the theme as you see fit. Just keep the structure for these 2 folders:
 ## Instructions
 
 1. Run `npm install` to install all dependencies
-2. Run `npm run watch` to watch for changes and build assets
-3. Run `npm run build` to build assets
-4. run `composer install` to install composer dependencies
+2. Change line 162 inside `esbuild.js` to your dev domain
+
+
+## Commands
+
+`npm run watch` to watch for changes and build assets
+`npm run build` to build assets
+`npm run bs5` to build Bootstrap from dev/css/bs5/bs5.source (SASS)
+
+
+## Composer (if using WP + Timber)
+
+1. Run `composer install` to install Timber and other dependencies
 
 
 ## Build notes
 
-- Fonts (woff, woff2, ttf, eot) and other static assets are ignored and not processed so keep dependant files relative to the /assets/ folder
+- Fonts (woff, woff2, ttf, eot) and other static assets are ignored and not processed during runtime, keep these files and reference them relative to the /assets/ folder
 
 
 ## Notes
@@ -62,8 +73,14 @@ v3.5 - Better Tailwind integration
 
 v4.0 - Refactored for Tailwind 4
 - Tailwind 4 fully supported
-- Ditched SASS for native CSS
+- Ditched SASS for postCSS and native CSS
 - Tailwind config not required, use @theme variables instead
 - BS is no longer mandatory and is only used for forms, modals and offcanvas. Must be compiled separately with SASS
 - Styles compile with PostCSS with the new @tailwind/postcss and autoprefixer plugin
 - Added composer directives for Timber 2.0+ and request object
+
+v4.0.1 - Minor fixes
+- Updated NPM dependencies
+- Updated Composer dependencies
+- Aligned bs5 breakpoints to Tailwind ones
+- Added bs5 command, usage of bs5 is deprecated

@@ -4,6 +4,7 @@
 /* Tailwind theme variables */
 @theme {
     --color-verde: #609422;
+    --breakpoint-3xl: 112rem;
 }
 
 /* Tailwind utilities */

@@ -159,7 +159,7 @@ if (!isProduction) {
         console.log(`🔭 Watching for changes...\n`);
 
         bs.init({
-            proxy: 'https://norblast.bizen.it',
+            proxy: 'https://www.domain.com',
             open: true,
             browser: ['firefox developer edition'],
         });

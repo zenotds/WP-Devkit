@@ -1,10 +1,11 @@
 {
 	"name": "@bizen/wp_devkit",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "WP Theme Devkit",
 	"scripts": {
 		"build": "NODE_ENV=production node esbuild.js",
-		"watch": "NODE_ENV=development node esbuild.js"
+		"watch": "NODE_ENV=development node esbuild.js",
+		"bs5": "sass ./dev/css/bs5/bs5.source ./dev/css/bs5/bs5.css"
 	},
 	"type": "module",
 	"author": "Francesco Selva",
@@ -41,8 +42,5 @@
 		"tippy.js": "^6.3.7",
 		"vanilla-sharing": "^6.1.2",
 		"vanillajs-scrollspy": "^3.0.8"
-	},
-	"config": {
-		"uri": "https://www.bizen.it"
 	}
 }
