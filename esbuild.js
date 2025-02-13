@@ -159,7 +159,11 @@ if (!isProduction) {
         console.log(`🔭 Watching for changes...\n`);
 
         bs.init({
+<<<<<<< HEAD
             proxy: 'https://www.domain.com',
+=======
+            proxy: 'https://www.google.com',
+>>>>>>> refs/remotes/origin/main
             open: true,
             browser: ['firefox developer edition'],
         });
