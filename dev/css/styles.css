@@ -1,5 +1,7 @@
 /* Tailwind */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 
 /* Tailwind theme variables */
 @theme {
@@ -14,7 +16,7 @@
 }
 
 /* BS5 */
-@import "./bs5/bs5";
+/* @import "./bs5/bs5"; */
 
 /* Base */
 @import "./base/custom";

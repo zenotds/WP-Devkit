@@ -1,6 +1,6 @@
 {
-	"name": "bizen/wp_composer",
-	"version": "4.0.2",
+	"name": "zenotds/wp_composer",
+	"version": "4.1",
 	"description": "Composer for WP Devkit",
 	"type": "wordpress-theme",
 	"license": "MIT",
@@ -25,11 +25,7 @@
 	},
 	"config": {
 		"allow-plugins": {
-			"roots/wordpress-core-installer": true,
 			"composer/installers": true
 		}
-	},
-	"scripts": {
-		"test": "phpunit"
 	}
 }

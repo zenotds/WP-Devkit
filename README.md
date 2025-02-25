@@ -84,3 +84,11 @@ v4.0.2 - Minor fixes
 - Updated Composer dependencies
 - Aligned bs5 breakpoints to Tailwind ones
 - Added bs5 command, usage of bs5 is deprecated
+
+v4.1 - Core updates
+- New commands
+- autogenerate wp-config.php shortcut
+- bs5 deprecated
+- plyr replaced with vidstack's version
+- glightbox and modals replaced by fancybox
+- alpine.js introduced

@@ -8,6 +8,9 @@ package-lock.json
 node_modules/
 dist/
 
+# Configuration
+wp-config.php
+
 # Compiled Java class files
 *.class
 
