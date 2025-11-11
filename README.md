@@ -92,3 +92,13 @@ v4.1 - Core updates
 - plyr replaced with vidstack's version
 - glightbox and modals replaced by fancybox
 - alpine.js introduced
+
+v5.0 - Aligned version with the non-timber devkit for consistency
+ - better installation experience
+ - removed unused devDependencies
+ - ditched bootstrap for good, goodbye and thanks for all the fish
+ - stronger esbuild config, with checks, catches and debounce
+ - version and date are now compiled to different line on build
+ - removed old/unused/situational dependencies (like smooth-scroll, tippy, vanillasharing, etc)
+ - polished custom scripts can no be used as modules `import { Autohide, HoverIntent, SmoothScroll, Sticky } from './custom/custom.js';`
+ - added support for Biome with Tailwind v4
