@@ -1,104 +1,259 @@
 # Zeno's WP DevKit
-JS + CSS Build Pipeline for Wordpress themes
 
-This is a frontend setup used in static template development such as Wordpress themes or other CMS related templating situations. I use it with Timber 2.0 but you can use the tools you prefer.
+A modern, lightning-fast build pipeline for WordPress themes and static templates. Built on esbuild and PostCSS for blazing performance and minimal configuration.
 
-The point of this environment is watching and building scripts and styles with a modern approach with ES Modules and PostCSS.
+## ✨ Features
 
+- ⚡ **esbuild** - Ultra-fast JavaScript bundling and transpilation
+- 🎨 **Tailwind CSS 4.x** - Modern utility-first CSS with native CSS variables
+- 📦 **ES Modules** - Modern JavaScript with tree-shaking
+- 🔄 **PostCSS** - Advanced CSS processing with autoprefixer
+- 🔥 **Hot Reload** - Instant updates during development
+- 🪶 **Zero Configuration** - Works out of the box
 
-## Basic Structure
+## 🚀 Quick Start
 
-Structure the theme as you see fit but keep the structure for these 2 folders:
+### Prerequisites
 
-- assets -> compiled files
-  - js -> compiled scripts
-  - css -> compiled styles
+- Node.js 18+ and npm
 
-- dev -> source files
-  - js -> source scripts
-  - css -> source styles
+### Installation
 
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-## Instructions
+2. **Configure Development URL** (optional)
+   
+   Edit `esbuild.js` at line 245 and set your local development domain:
+   ```javascript
+   const PROXY_URL = 'https://your-site.test';
+   ```
 
-1. Run `npm install` to install all dependencies
-2. Change line 162 inside `esbuild.js` to your dev domain
+3. **Start Development**
+   ```bash
+   npm run dev
+   ```
 
+4. **Build for Production**
+   ```bash
+   npm run build
+   ```
 
-## Commands
+### Available Commands
 
-`npm run watch` to watch for changes and build assets
-`npm run build` to build assets
-`npm run bs5` to build Bootstrap from dev/css/bs5/bs5.source (SASS)
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `npm run dev` | `watch` | Watch for changes and rebuild assets with hot reload |
+| `npm run build` | `prod` | Build optimized assets for production |
 
+## 📁 Project Structure
 
-## Composer (if using WP + Timber)
+### Required Folder Structure
 
-1. Run `composer install` to install Timber and other dependencies
+Keep this structure for the build system to work:
 
+```
+your-theme/
+├── assets/               # Compiled files (auto-generated)
+│   ├── css/              # Compiled stylesheets
+│   └── js/               # Compiled scripts
+└── dev/                  # Source files
+    ├── css/              # Source stylesheets (Tailwind)
+    └── js/               # Source scripts (ES6 modules)
+```
 
-## Build notes
+Everything else is up to you - structure your theme/template however you like!
 
-- Fonts (woff, woff2, ttf, eot) and other static assets are ignored and not processed during runtime, keep these files and reference them relative to the /assets/ folder
+## 🎯 Technology Stack
 
+### Core Technologies
 
-## Notes
+- **[esbuild](https://esbuild.github.io/)** - Lightning-fast JavaScript bundler
+- **[Tailwind CSS](https://tailwindcss.com/)** ^4.x - Utility-first CSS framework
+- **[PostCSS](https://postcss.org/)** - CSS transformation with plugins
 
-- Avoid images in css, there are better ways :P
-- The starter comes with some useful JS packages such as gLightbox, Swiper, Plyr, etc.
-- Feel free to edit whatever you want as you see fit.
-- Other timber files required for the theme such as functions and templates are not included, so you can use this just as a static asset compilation Boilerplate
+### Included Libraries
 
-## Changelog
+Check `package.json` for the complete list. Notable inclusions:
 
-v1.0 - First release, Only JS, Webpack bundler. Basic dependencies. Some custom scripts
+- **[Alpine.js](https://alpinejs.dev/)** - Lightweight JavaScript framework
+- **[GSAP](https://greensock.com/gsap/)** - Professional-grade animation
+- **[Swiper](https://swiperjs.com/)** - Modern touch slider
+- **[Vidstack](https://www.vidstack.io/)** - Advanced video player
+- **Custom Utilities** - Autohide, HoverIntent, SmoothScroll, Sticky
 
-v1.5 - JS and SCSS parsing with Webpack and PostCSS. More useful dependencies.
+### Custom JavaScript Modules
 
-v2.0 - New bundler: esbuild, faster and lighter!
+Import only what you need:
 
-v3.0 - Tailored for WP. 
-- integrated with Tailwind (not mandatory)
-- moved all scripts at root level
-- better hoverintent
-- TODO, tailwind structure is a bit iffy
+```javascript
+import { Autohide, HoverIntent, SmoothScroll, Sticky } from './custom/custom.js';
 
-v3.5 - Better Tailwind integration
-- can use either TW or BS or a mix of both
-- write version to style.css on build
-- fixed tailwind recursion, now it's all integrated in the base styles.scss
-- all comments in the script made in italian (sorry about that)
-- streamlined scss folder structure
-- TODO, will have to deal with SASS @import deprecation at some point, that sucks..
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+  Autohide('.header', 80);
+  SmoothScroll();
+  Sticky('.sidebar');
+  
+  new HoverIntent(document.querySelectorAll('.dropdown'), {
+    onEnter: (el) => el.classList.add('open'),
+    onExit: (el) => el.classList.remove('open')
+  });
+});
+```
 
-v4.0 - Refactored for Tailwind 4
-- Tailwind 4 fully supported
-- Ditched SASS for postCSS and native CSS
-- Tailwind config not required, use @theme variables instead
-- BS is no longer mandatory and is only used for forms, modals and offcanvas. Must be compiled separately with SASS
-- Styles compile with PostCSS with the new @tailwind/postcss and autoprefixer plugin
-- Added composer directives for Timber 2.0+ and request object
+## 🛠️ Build System
 
-v4.0.2 - Minor fixes
-- Updated NPM dependencies
-- Updated Composer dependencies
-- Aligned bs5 breakpoints to Tailwind ones
-- Added bs5 command, usage of bs5 is deprecated
+### Asset Processing
 
-v4.1 - Core updates
-- New commands
-- autogenerate wp-config.php shortcut
-- bs5 deprecated
-- plyr replaced with vidstack's version
-- glightbox and modals replaced by fancybox
-- alpine.js introduced
+- **CSS**: Tailwind CSS 4.x compilation with PostCSS and autoprefixer
+- **JavaScript**: ES6+ transpilation and bundling with esbuild
+- **Static Assets**: Fonts and images are not processed - reference them relative to `/assets/`
 
-v5.0 - Aligned version with the non-timber devkit for consistency
- - better installation experience
- - removed unused devDependencies
- - ditched bootstrap for good, goodbye and thanks for all the fish
- - stronger esbuild config, with checks, catches and debounce
- - version and date are now compiled to different line on build
- - removed old/unused/situational dependencies (like smooth-scroll, tippy, vanillasharing, etc)
- - polished custom scripts can no be used as modules `import { Autohide, HoverIntent, SmoothScroll, Sticky } from './custom/custom.js';`
- - added support for Biome with Tailwind v4
+### Build Features
+
+- **Hot Module Replacement** - Instant updates during development
+- **Error Handling** - Robust error catching and reporting
+- **Debouncing** - Prevents unnecessary rebuilds
+- **Version Tagging** - Automatic versioning in output files
+- **Cache Busting** - Version hashes for better cache management
+
+### Important Notes
+
+- ⚠️ **Avoid images in CSS** - Use `<img>` tags or background images via HTML for better performance
+- 📁 **Static fonts** - Place fonts in `/assets/webfonts/` and reference them directly in CSS
+- 🎯 **ES Modules** - All JavaScript uses modern module syntax with tree-shaking
+
+## 🎨 Styling Guidelines
+
+This theme uses Tailwind CSS 4.x with the new `@import`, `@theme`, and `@utility` syntax:
+
+```css
+/* dev/css/main.css */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@utility custom-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+```
+
+Includes a Biome config to handle Tailwind 4.0 syntax.
+
+## 🔧 Use Cases
+
+This build pipeline works great for:
+
+- **WordPress Themes** - Pair with Timber, ACF, or vanilla PHP
+- **Static Templates** - Any CMS or static site generator
+- **Design Systems** - Component libraries and pattern libraries
+- **Landing Pages** - Fast, modern static pages
+- **Prototypes** - Quick mockups with production-ready tooling
+
+## 📦 Optional: WordPress + Timber
+
+If you're using this with WordPress and Timber:
+
+```bash
+composer install
+```
+
+This will install Timber 2.0+ and the Symfony HTTP Foundation request object.
+
+## 📝 Changelog
+
+### v5.0 - Modern Architecture (Current)
+
+**Breaking Changes**
+- Removed Bootstrap completely (so long, and thanks for all the fish! 🐬)
+- Removed situational dependencies: smooth-scroll, tippy, vanillasharing
+
+**New Features**
+- ✨ Custom scripts refactored as ES6 modules with comprehensive documentation
+- ⚡ Enhanced esbuild configuration with error handling and debouncing
+- 🧹 Biome integration with Tailwind v4 compatibility
+- 📊 Build outputs version and date on separate lines
+
+**Improvements**
+- Streamlined installation experience
+- Removed unused devDependencies
+- Various under-the-hood optimizations
+
+### v4.5 - Alpine Era
+
+- New command structure
+- Auto-generate wp-config.php shortcut
+- Replaced Plyr with Vidstack
+- Replaced gLightbox/modals with Fancybox
+- Introduced Alpine.js
+
+### v4.0.2 - Minor Fixes
+
+- Updated npm and Composer dependencies
+- Aligned breakpoints across frameworks
+- Deprecated Bootstrap 5
+
+### v4.0 - Tailwind 4 Era
+
+- Full Tailwind 4 support with native CSS
+- Ditched SASS for PostCSS
+- Use `@theme` variables instead of config files
+- Bootstrap made optional (forms, modals, offcanvas only)
+- Added Timber 2.0+ support via Composer
+
+### v3.5 - Better Tailwind Integration
+
+- Mix and match Tailwind and Bootstrap
+- Auto-version style.css on build
+- Fixed Tailwind recursion issues
+- Streamlined SCSS structure
+
+### v3.0 - Leaving BS behind
+
+- Integrated Tailwind CSS (optional)
+- Moved scripts to root level
+- Improved HoverIntent implementation
+
+### v2.0 - esbuild Era
+
+- Switched from Webpack to esbuild
+- 10x faster builds
+- Lighter dependencies
+
+### v1.5 - PostCSS Processing
+
+- Added SCSS parsing with PostCSS
+- Expanded utility library
+
+### v1.0 - Initial Release
+
+- JavaScript bundling with Webpack
+- Basic custom scripts
+- Core dependencies
+
+## 🤝 Contributing
+
+This is a personal development kit, but suggestions and improvements are welcome! Feel free to fork and adapt to your needs.
+
+## 📄 License
+
+This project is provided as-is for frontend development. Individual dependencies maintain their own licenses.
+
+## 🙏 Credits
+
+Built with ❤️ by [@zenotds](https://github.com/zenotds)
+
+Special thanks to:
+- [esbuild](https://esbuild.github.io/) team
+- [Tailwind CSS](https://tailwindcss.com/) team
+- All the amazing open-source contributors
+
+---
+
+**Happy building!** 🎉

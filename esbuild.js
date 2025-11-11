@@ -244,7 +244,7 @@ if (!isProduction) {
 			console.log(`🔭 Watching for changes...\n`);
 
 			bs.init({
-				proxy: "https://www.domain.com/",
+				proxy: "https://your-site.test",
 				open: true,
 				browser: ["firefox developer edition"],
 			});
